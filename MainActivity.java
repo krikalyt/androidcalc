@@ -11,9 +11,6 @@ public class MainActivity extends AppCompatActivity {
     String strchng ="";
     String finalone="";
     String finaltwo="";
-    float strone=0;
-    float strtwo=0;
-    float result=0;
     char operation='(';
 
     @Override
@@ -182,9 +179,6 @@ public class MainActivity extends AppCompatActivity {
                 strchng ="";
                 finalone="";
                 finaltwo="";
-                 strone=0;
-                 strtwo=0;
-                 result=0;
                 textView.setText("");
             }
         });
@@ -202,17 +196,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 String finalresultprint="";
                try{ if(finalone=="") {
-                    result = 0;
-                    finalresultprint = "" + result;
+                    finalresultprint = "" ;
               }
               else {
                   finaltwo = strchng;
-                  strchng = "";
-                  strone = Float.parseFloat(finalone);
-                  strtwo = Float.parseFloat(finaltwo);
-
-                  finalresultprint = resultclass.operation(strone,strtwo,operation) + "";
-
+                  finalresultprint = resultclass.finaloperation(finalone,finaltwo,operation);
               }}catch (Exception e){
                    finalresultprint = "";
                }
